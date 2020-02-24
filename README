@@ -1,0 +1,90 @@
+Mustafa Taner 315CB - Tema 1 SD, 105 puncte
+
+	FUNCTII PRINCIPALE
+------------------------------------
+
+	Functia "main":
+- deschide fisierele de input / output;
+- aloca memorie pt sala;
+- citeste nr de mese din sala;
+- pentru fiecare masa: - aloca memorie pt structura;
+		       - aloca memorie pt nume;
+		       - citeste numele;
+		       - citeste nr de jucatori crt si max;
+		       - pt fiecare jucator: - aloca memorie pt struct;
+					     - aloca memorie pt nume;
+					     - il citeste;	
+					     - aloca un el de tip 
+						lista generica;
+					     - lista->info = jucator;
+					     - adauga jucatorul la masa.
+		       - aloca un element de tip lista generica;
+		       - lista->info = masa;
+		       - adauga masa la sala.
+- apeleaza functia "evenimente";
+- apeleaza functia "elibMem".
+
+	Functia "evenimente":
+- citeste comenzile si apeleaza functia corespunzatoare fiecarei comenzi.
+
+	Functia "elibMem":
+- elibereaza fiecare element alocat dinamic.
+
+	Functia "Afisare":
+- afiseaza mesele si jucatorii;
+
+	Functia "noroc":
+- cauta jucatorul la masa ceruta;
+- ii mareste nr de maini cu 1.
+
+	Functia "ghinion" & "ghinion2":
+- cauta jucatorul la masa ceruta;
+- ii scade nr de maini cu 1;
+- daca numarul de maini e mai mic ca 1, il sterge si updateaza
+	numarul de jucatori de la masa;
+- daca masa ramane goala, e stearsa.
+
+	Functia "tura":
+- cauta masa ceruta;
+- pentru fiecare jucator, apeleaza functia "ghinion";
+- daca primul jucator de langa santinela nu a fost sters,
+	se roteste masa cu o pozitie. (functia "roteste");
+
+	Functia "tura_completa":
+- pentru fiecare masa, se apeleaza functia "tura".
+
+	Functia "clasament":
+- se cauta masa ceruta;
+- pentru fiecare jucator, se apeleaza functia "AdaugaInClasament";
+- se afiseaza; (se apeleaza "AfisareLista");
+- se sterge lista (se apeleaza "eliberareClasament").
+
+	Functia "inchide":
+- verifica daca sunt destule locuri libere;
+- daca da, fiecare jucator este redistribuit;
+- se elibereaza memoria pentru jucatorii mesei inchise;
+- se updateaza nr de mese si locuri in sala.
+
+
+
+	FUNCTII AUXILIARE
+-----------------------------------
+
+	Functia "AlocCelula" aloca memorie pt un element de tip lista generica.
+
+	Functiile "AdaugaInSala", "AdaugaLaMasa", "AdaugaInClasament" 
+adauga elemente de tip lista generica la o lista data. Diferentele dintre ele:
+	- "AdaugaInSala" adauga la lista simplu inlantuita, la sfarsit;
+	- "AdaugaLaMasa" adauga la lista circulara cu santinela,
+		inainte de santinela;
+	- "AdaugaInClasament" adauga la lista simplu inlantuita, ordonat
+		in functie de 2 argumente.
+
+	Functia "AfisareLista" afiseaza elementele unei lista simplu inlantuite
+generice cu info de tip jucator.
+
+	Functia "eliberareClasament" sterge elementele unei liste simplu 
+inlantuite generice cu info de tip jucator.
+
+	Functia "roteste" roteste cu o pozitie jucatorii unei mese date
+ca argument.
